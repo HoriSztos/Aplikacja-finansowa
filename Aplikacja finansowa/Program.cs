@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aplikacja_finansowa;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,9 +17,11 @@ namespace AplikacjaFinansowa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            MainForm mainForm = new MainForm();
-            DodajTransakcjeForm dodajTransakcjeForm = new DodajTransakcjeForm(mainForm);
-            Application.Run(mainForm);
+            Aplikacja_finansowa.MainMenu mainMenu = new Aplikacja_finansowa.MainMenu();
+            Finanse finanse = new Finanse();
+            Application.Run(mainMenu);
+
+
         }
     }
 }
