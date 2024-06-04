@@ -14,10 +14,7 @@ namespace Aplikacja_finansowa
 {
     public partial class MainMenu : Form
     {
-        public MainMenu()
-        {
-            InitializeComponent();
-        }
+   
 
         private void zarzadzaj_Click(object sender, EventArgs e)
         {

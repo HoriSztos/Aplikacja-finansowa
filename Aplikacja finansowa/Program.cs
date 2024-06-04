@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AplikacjaFinansowa
 {
     internal static class Program
@@ -20,6 +21,8 @@ namespace AplikacjaFinansowa
             Aplikacja_finansowa.MainMenu mainMenu = new Aplikacja_finansowa.MainMenu();
             Finanse finanse = new Finanse();
             Application.Run(mainMenu);
+
+
 
 
         }
