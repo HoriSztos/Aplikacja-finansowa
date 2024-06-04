@@ -35,6 +35,7 @@
             this.dodaj = new System.Windows.Forms.Button();
             this.opis = new System.Windows.Forms.TextBox();
             this.kategorie = new System.Windows.Forms.Button();
+            this.kwota = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // back
@@ -81,7 +82,7 @@
             // 
             // dodaj
             // 
-            this.dodaj.Location = new System.Drawing.Point(71, 283);
+            this.dodaj.Location = new System.Drawing.Point(71, 303);
             this.dodaj.Name = "dodaj";
             this.dodaj.Size = new System.Drawing.Size(112, 33);
             this.dodaj.TabIndex = 6;
@@ -91,7 +92,7 @@
             // 
             // opis
             // 
-            this.opis.Location = new System.Drawing.Point(33, 181);
+            this.opis.Location = new System.Drawing.Point(33, 201);
             this.opis.Multiline = true;
             this.opis.Name = "opis";
             this.opis.Size = new System.Drawing.Size(196, 74);
@@ -109,11 +110,20 @@
             this.kategorie.UseVisualStyleBackColor = true;
             this.kategorie.Click += new System.EventHandler(this.kategorie_Click);
             // 
+            // kwota
+            // 
+            this.kwota.Location = new System.Drawing.Point(33, 167);
+            this.kwota.Name = "kwota";
+            this.kwota.Size = new System.Drawing.Size(196, 20);
+            this.kwota.TabIndex = 9;
+            this.kwota.Text = "Kwota";
+            // 
             // Operacja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.kwota);
             this.Controls.Add(this.kategorie);
             this.Controls.Add(this.opis);
             this.Controls.Add(this.dodaj);
@@ -137,5 +147,6 @@
         private System.Windows.Forms.Button dodaj;
         private System.Windows.Forms.TextBox opis;
         private System.Windows.Forms.Button kategorie;
+        private System.Windows.Forms.TextBox kwota;
     }
 }

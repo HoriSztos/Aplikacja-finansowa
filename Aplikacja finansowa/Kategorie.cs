@@ -24,7 +24,7 @@ namespace Aplikacja_finansowa
 
         private void InitializeCategoryLists()
         {
-            // Dodaj istniejące kategorie do listboxów
+            
             foreach (string category in wydatkiKategorie)
             {
                 kategorieWydatków.Items.Add(category);

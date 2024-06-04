@@ -22,9 +22,6 @@ namespace AplikacjaFinansowa
             Finanse finanse = new Finanse();
             Application.Run(mainMenu);
 
-
-
-
         }
     }
 }
