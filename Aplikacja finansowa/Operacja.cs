@@ -77,7 +77,8 @@ namespace Aplikacja_finansowa
             string name =tytuł.Text.ToString();
             string description =opis.Text.ToString();
             string category =kategoria.Text.ToString();
-            decimal value =;
+            decimal value = decimal.Parse(kwota.Text);
+            InsertTransaction(category, name, description, value);
         }
 
         private void kategorie_Click(object sender, EventArgs e)
@@ -138,7 +139,7 @@ namespace Aplikacja_finansowa
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                MessageBox.Show($"Wystąpił błąd: {ex.Message}");
             }
         }
     }

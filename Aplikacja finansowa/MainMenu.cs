@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using Npgsql;
 
 namespace Aplikacja_finansowa
@@ -55,7 +54,7 @@ namespace Aplikacja_finansowa
                         {
                             if (!reader.HasRows)
                             {
-                                MessageBox.Show("No data found.");
+                                MessageBox.Show("Brak danych.");
                             }
                             else
                             {
