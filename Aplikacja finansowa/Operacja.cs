@@ -124,13 +124,14 @@ namespace Aplikacja_finansowa
                     connection.Open();
 
                     // Insert query
-                    string query = "INSERT INTO projekt.transactions (category, name, description, value, id) VALUES (@category, @name, @description, @value, nextval('projekt.transactions_id_seq'::regclass))";
+                    string query = "INSERT INTO projekt.transactions (category, name, description, value, id, date) VALUES (@category, @name, @description, @value, nextval('projekt.transactions_id_seq'::regclass),@date)";
                     using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@category", category);
                         command.Parameters.AddWithValue("@description", description);
                         command.Parameters.AddWithValue("@name", name);
                         command.Parameters.AddWithValue("@value", value);
+                        command.Parameters.AddWithValue("@date", DateTime.Now);
                         command.ExecuteNonQuery();
                     }
                 }

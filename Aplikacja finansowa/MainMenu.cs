@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using Npgsql;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Collections.Generic;
 
 namespace Aplikacja_finansowa
 {
     public partial class MainMenu : Form
     {
-         public MainMenu()
+        public MainMenu()
         {
             InitializeComponent();
             this.Load += new System.EventHandler(this.MainMenu_Load);
@@ -75,5 +77,7 @@ namespace Aplikacja_finansowa
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
+    
+        
     }
 }

@@ -30,83 +30,181 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.listViewKoszty = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listViewPrzychody = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.back = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 60);
+            this.tabControl1.Location = new System.Drawing.Point(32, 143);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(929, 481);
+            this.tabControl1.Size = new System.Drawing.Size(1907, 1051);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right))); // Anchoring to all sides
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Controls.Add(this.listViewKoszty);
+            this.tabPage1.Location = new System.Drawing.Point(10, 48);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(921, 455);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.tabPage1.Size = new System.Drawing.Size(1887, 993);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Koszty";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // listViewKoszty
+            // 
+            this.listViewKoszty.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewKoszty.HideSelection = false;
+            this.listViewKoszty.Location = new System.Drawing.Point(16, 14);
+            this.listViewKoszty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.listViewKoszty.Name = "listViewKoszty";
+            this.listViewKoszty.Size = new System.Drawing.Size(1855, 972);
+            this.listViewKoszty.TabIndex = 0;
+            this.listViewKoszty.UseCompatibleStateImageBehavior = false;
+            this.listViewKoszty.View = System.Windows.Forms.View.Details;
+            this.listViewKoszty.Dock = System.Windows.Forms.DockStyle.Fill; // Docking to fill the parent container
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Kategoria";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nazwa";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Opis";
+            this.columnHeader3.Width = 200;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Kwota";
+            this.columnHeader4.Width = 100;
+            // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Controls.Add(this.listViewPrzychody);
+            this.tabPage2.Location = new System.Drawing.Point(10, 48);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(921, 455);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.tabPage2.Size = new System.Drawing.Size(1887, 993);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Przychody";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // listViewPrzychody
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(921, 455);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Kategorie";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.listViewPrzychody.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.listViewPrzychody.HideSelection = false;
+            this.listViewPrzychody.Location = new System.Drawing.Point(16, 14);
+            this.listViewPrzychody.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.listViewPrzychody.Name = "listViewPrzychody";
+            this.listViewPrzychody.Size = new System.Drawing.Size(1855, 972);
+            this.listViewPrzychody.TabIndex = 0;
+            this.listViewPrzychody.UseCompatibleStateImageBehavior = false;
+            this.listViewPrzychody.View = System.Windows.Forms.View.Details;
+            this.listViewPrzychody.Dock = System.Windows.Forms.DockStyle.Fill; // Docking to fill the parent container
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Kategoria";
+            this.columnHeader5.Width = 120;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Nazwa";
+            this.columnHeader6.Width = 120;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Opis";
+            this.columnHeader7.Width = 200;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Kwota";
+            this.columnHeader8.Width = 100;
             // 
             // back
             // 
             this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.back.Location = new System.Drawing.Point(16, 13);
+            this.back.Location = new System.Drawing.Point(43, 31);
+            this.back.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(81, 30);
+            this.back.Size = new System.Drawing.Size(216, 72);
             this.back.TabIndex = 1;
             this.back.Text = "Powrót";
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
+            this.back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left))); // Anchoring to top-left
             // 
             // Finanse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 623);
+            this.ClientSize = new System.Drawing.Size(2057, 1281);
             this.Controls.Add(this.back);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Finanse";
-            this.Text = "Form2";
+            this.Text = "Finanse";
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button back;
+        private System.Windows.Forms.ListView listViewKoszty;
+        private System.Windows.Forms.ListView listViewPrzychody;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }

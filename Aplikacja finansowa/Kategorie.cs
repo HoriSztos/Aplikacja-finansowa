@@ -25,8 +25,12 @@ namespace Aplikacja_finansowa
 
     private void InitializeCategoryLists()
     {
+            kategorieWydatków.Items.Clear();
+            kategoriePrzychodów.Items.Clear();
+            wydatkiKategorie.Clear();
+            przychodyKategorie.Clear();
 
-        try
+            try
         {
             // Połączenie z bazą danych
             string connectionString = "Host=localhost;Username=postgres;Password=projekt;Database=postgres";
@@ -46,7 +50,6 @@ namespace Aplikacja_finansowa
                     }
                 }
 
-                // Fetch categories for przychody
                 string queryPrzychody = "SELECT name FROM projekt.categories_gains";
                 using (NpgsqlCommand commandPrzychody = new NpgsqlCommand(queryPrzychody, connection))
                 {
@@ -64,13 +67,13 @@ namespace Aplikacja_finansowa
         {
             MessageBox.Show($"Wystąpił błąd: {ex.Message}");
         }
-        kategorieWydatków.Items.Clear();
+        
         foreach (var category in wydatkiKategorie)
             {
                 string item = category;
                 kategorieWydatków.Items.Add(item);
             }
-        kategoriePrzychodów.Items.Clear();
+        
         foreach (var category in przychodyKategorie)
             {
                 string item = category;
@@ -81,10 +84,10 @@ namespace Aplikacja_finansowa
 
         private void back_Click(object sender, EventArgs e)
         {
-            MainMenu mainMenu = new MainMenu();
+            Operacja operacja = new Operacja();
             this.Hide();
-            mainMenu.FormClosed += (s, args) => this.Close();
-            mainMenu.Show();
+            operacja.FormClosed += (s, args) => this.Close();
+            operacja.Show();
         }
 
         private void usun_wyd_Click(object sender, EventArgs e)
@@ -93,8 +96,6 @@ namespace Aplikacja_finansowa
             {
                 string selectedCategory = kategorieWydatków.SelectedItem.ToString();
                 UsunKategorieWydatkowZBazy(selectedCategory);
-                wydatkiKategorie.Remove(selectedCategory);
-                kategorieWydatków.Items.RemoveAt(kategorieWydatków.SelectedIndex);
             }
             else
             {
@@ -121,6 +122,7 @@ namespace Aplikacja_finansowa
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Kategoria usunięta pomyślnie!", "Usunięto", MessageBoxButtons.OK);
+                            InitializeCategoryLists();
                         }
                         else
                         {
@@ -142,7 +144,6 @@ namespace Aplikacja_finansowa
             if (!string.IsNullOrEmpty(category))
             {
                 DodajKategorieWydatkowDoBazy(category);
-                InitializeCategoryLists();
                 dodaj_kategorie_wydatku.Clear();
             }
             else
@@ -161,22 +162,35 @@ namespace Aplikacja_finansowa
                 {
                     connection.Open();
 
-                    // Insert query
-                    string query = "INSERT INTO projekt.categories_expenses\r\n(\"name\")\r\nVALUES(@category);";
-                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    // Sprawdź czy kategoria już istnieje w liście wydatkiKategorie
+                    if (!wydatkiKategorie.Contains(category))
                     {
-                        command.Parameters.AddWithValue("@category", category);
-                        command.ExecuteNonQuery();
+                        // Insert query
+                        string query = "INSERT INTO projekt.categories_expenses (\"name\") VALUES (@category)";
+                        using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@category", category);
+                            command.ExecuteNonQuery();
+                        }
+
+                        // Dodaj kategorię tylko jeśli została dodana do bazy danych
+                        wydatkiKategorie.Add(category);
+                        MessageBox.Show("Kategoria dodana pomyślnie!", "Dodano", MessageBoxButtons.OK);
+                        // Po dodaniu do bazy danych odśwież listy kategorii
+                        InitializeCategoryLists();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kategoria już istnieje.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-
-                MessageBox.Show("Kategoria dodana pomyślnie!", "Dodano", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Wystąpił błąd: {ex.Message}");
             }
         }
+
         private void DodajKategoriePrzychodowDoBazy(string category)
         {
             try
@@ -187,16 +201,25 @@ namespace Aplikacja_finansowa
                 {
                     connection.Open();
 
-                    // Insert query
-                    string query = "INSERT INTO projekt.categories_gains\r\n(\"name\")\r\nVALUES(@category);";
-                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    if (!przychodyKategorie.Contains(category))
                     {
-                        command.Parameters.AddWithValue("@category", category);
-                        command.ExecuteNonQuery();
+                        // Insert query
+                        string query = "INSERT INTO projekt.categories_gains (\"name\") VALUES (@category)";
+                        using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@category", category);
+                            command.ExecuteNonQuery();
+                        }
+
+                        przychodyKategorie.Add(category);
+                        MessageBox.Show("Kategoria dodana pomyślnie!", "Dodano", MessageBoxButtons.OK);
+                        InitializeCategoryLists();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kategoria już istnieje.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-
-                MessageBox.Show("Kategoria dodana pomyślnie!", "Dodano", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -204,13 +227,13 @@ namespace Aplikacja_finansowa
             }
         }
 
+
         private void dod_przych_Click(object sender, EventArgs e)
         {
             string category = dodaj_kategorie_przychodu.Text.Trim();
             if (!string.IsNullOrEmpty(category))
             {
                 DodajKategoriePrzychodowDoBazy(category);
-                InitializeCategoryLists();
                 dodaj_kategorie_przychodu.Clear();
             }
             else
@@ -225,8 +248,6 @@ namespace Aplikacja_finansowa
             {
                 string selectedCategory = kategoriePrzychodów.SelectedItem.ToString();
                 UsunKategoriePrzychodowZBazy(selectedCategory);
-                przychodyKategorie.Remove(selectedCategory);
-                kategoriePrzychodów.Items.RemoveAt(kategoriePrzychodów.SelectedIndex);
             }
             else
             {
@@ -253,6 +274,7 @@ namespace Aplikacja_finansowa
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Kategoria usunięta pomyślnie!", "Usunięto", MessageBoxButtons.OK);
+                            InitializeCategoryLists();
                         }
                         else
                         {
@@ -260,6 +282,7 @@ namespace Aplikacja_finansowa
                         }
                     }
                 }
+
             }
             catch (Exception ex)
             {

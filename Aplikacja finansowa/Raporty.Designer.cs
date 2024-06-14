@@ -44,15 +44,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label1.Location = new System.Drawing.Point(10, 61);
+            this.label1.Location = new System.Drawing.Point(27, 145);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 17);
+            this.label1.Size = new System.Drawing.Size(324, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Wybierz zakres dat:";
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(155, 60);
+            this.monthCalendar1.Location = new System.Drawing.Point(413, 143);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(24, 21, 24, 21);
             this.monthCalendar1.MaxSelectionCount = 9999999;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.ShowToday = false;
@@ -60,18 +62,21 @@
             // 
             // generuj
             // 
-            this.generuj.Location = new System.Drawing.Point(456, 186);
+            this.generuj.Location = new System.Drawing.Point(1216, 444);
+            this.generuj.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.generuj.Name = "generuj";
-            this.generuj.Size = new System.Drawing.Size(75, 36);
+            this.generuj.Size = new System.Drawing.Size(200, 86);
             this.generuj.TabIndex = 2;
             this.generuj.Text = "Generuj raport";
             this.generuj.UseVisualStyleBackColor = true;
+            this.generuj.Click += new System.EventHandler(this.generuj_Click);
             // 
             // tydzien
             // 
-            this.tydzien.Location = new System.Drawing.Point(30, 90);
+            this.tydzien.Location = new System.Drawing.Point(80, 215);
+            this.tydzien.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tydzien.Name = "tydzien";
-            this.tydzien.Size = new System.Drawing.Size(91, 29);
+            this.tydzien.Size = new System.Drawing.Size(243, 69);
             this.tydzien.TabIndex = 3;
             this.tydzien.Text = "Ostatni tydzień";
             this.tydzien.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@
             // 
             // miesiac
             // 
-            this.miesiac.Location = new System.Drawing.Point(30, 125);
+            this.miesiac.Location = new System.Drawing.Point(80, 298);
+            this.miesiac.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.miesiac.Name = "miesiac";
-            this.miesiac.Size = new System.Drawing.Size(91, 29);
+            this.miesiac.Size = new System.Drawing.Size(243, 69);
             this.miesiac.TabIndex = 4;
             this.miesiac.Text = "Ostatni miesiąc";
             this.miesiac.UseVisualStyleBackColor = true;
@@ -89,9 +95,10 @@
             // 
             // rok
             // 
-            this.rok.Location = new System.Drawing.Point(30, 160);
+            this.rok.Location = new System.Drawing.Point(80, 382);
+            this.rok.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.rok.Name = "rok";
-            this.rok.Size = new System.Drawing.Size(91, 34);
+            this.rok.Size = new System.Drawing.Size(243, 81);
             this.rok.TabIndex = 5;
             this.rok.Text = "Od początku roku";
             this.rok.UseVisualStyleBackColor = true;
@@ -100,9 +107,10 @@
             // back
             // 
             this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
-            this.back.Location = new System.Drawing.Point(12, 12);
+            this.back.Location = new System.Drawing.Point(32, 29);
+            this.back.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(81, 30);
+            this.back.Size = new System.Drawing.Size(216, 72);
             this.back.TabIndex = 6;
             this.back.Text = "Powrót";
             this.back.UseVisualStyleBackColor = true;
@@ -112,9 +120,10 @@
             // 
             this.data_poczatek.AutoSize = true;
             this.data_poczatek.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.data_poczatek.Location = new System.Drawing.Point(436, 76);
+            this.data_poczatek.Location = new System.Drawing.Point(1163, 181);
+            this.data_poczatek.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.data_poczatek.Name = "data_poczatek";
-            this.data_poczatek.Size = new System.Drawing.Size(120, 17);
+            this.data_poczatek.Size = new System.Drawing.Size(293, 39);
             this.data_poczatek.TabIndex = 7;
             this.data_poczatek.Text = "Data początkowa:";
             // 
@@ -122,17 +131,19 @@
             // 
             this.data_koncowa.AutoSize = true;
             this.data_koncowa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.data_koncowa.Location = new System.Drawing.Point(436, 102);
+            this.data_koncowa.Location = new System.Drawing.Point(1163, 243);
+            this.data_koncowa.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.data_koncowa.Name = "data_koncowa";
-            this.data_koncowa.Size = new System.Drawing.Size(101, 17);
+            this.data_koncowa.Size = new System.Drawing.Size(246, 39);
             this.data_koncowa.TabIndex = 8;
             this.data_koncowa.Text = "Data końcowa:";
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(437, 123);
+            this.clear.Location = new System.Drawing.Point(1165, 293);
+            this.clear.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(129, 20);
+            this.clear.Size = new System.Drawing.Size(344, 48);
             this.clear.TabIndex = 9;
             this.clear.Text = "Wyczyść zaznaczenie";
             this.clear.UseVisualStyleBackColor = true;
@@ -140,9 +151,9 @@
             // 
             // Raporty
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(2133, 1073);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.data_koncowa);
             this.Controls.Add(this.data_poczatek);
@@ -153,6 +164,7 @@
             this.Controls.Add(this.generuj);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Raporty";
             this.Text = "Raporty";
             this.ResumeLayout(false);
