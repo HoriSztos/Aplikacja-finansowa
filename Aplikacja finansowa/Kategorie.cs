@@ -21,9 +21,11 @@ namespace Aplikacja_finansowa
         {
             InitializeComponent();
             InitializeCategoryLists();
+            StyleManager.ApplyStylesToForm(this);
         }
 
-    private void InitializeCategoryLists()
+
+        private void InitializeCategoryLists()
     {
             kategorieWydatków.Items.Clear();
             kategoriePrzychodów.Items.Clear();

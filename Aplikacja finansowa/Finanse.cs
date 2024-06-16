@@ -1,12 +1,5 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Aplikacja_finansowa
@@ -16,9 +9,11 @@ namespace Aplikacja_finansowa
         public Finanse()
         {
             InitializeComponent();
-            LoadKoszty();
+            LoadWydatki();
             LoadPrzychody();
+            StyleManager.ApplyStylesToForm(this);
         }
+
 
         private void back_Click(object sender, EventArgs e)
         {
@@ -28,7 +23,7 @@ namespace Aplikacja_finansowa
             mainMenu.Show();
 
         }
-        private void LoadKoszty()
+        private void LoadWydatki()
         {
             string connectionString = "Host=localhost;Username=postgres;Password=projekt;Database=postgres";
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))

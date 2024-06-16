@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Aplikacja_finansowa
 {
@@ -21,7 +14,7 @@ namespace Aplikacja_finansowa
         {
             InitializeComponent();
             this.Load += new System.EventHandler(this.Operacja_Load);
-
+            StyleManager.ApplyStylesToForm(this);
         }
 
 

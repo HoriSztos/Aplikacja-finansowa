@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Finanse));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listViewKoszty = new System.Windows.Forms.ListView();
@@ -55,11 +56,8 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1907, 1051);
+            this.tabControl1.Size = new System.Drawing.Size(1763, 1051);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right))); // Anchoring to all sides
             // 
             // tabPage1
             // 
@@ -68,9 +66,9 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabPage1.Size = new System.Drawing.Size(1887, 993);
+            this.tabPage1.Size = new System.Drawing.Size(1743, 993);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Koszty";
+            this.tabPage1.Text = "Wydatki";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // listViewKoszty
@@ -80,15 +78,15 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.listViewKoszty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewKoszty.HideSelection = false;
-            this.listViewKoszty.Location = new System.Drawing.Point(16, 14);
+            this.listViewKoszty.Location = new System.Drawing.Point(8, 7);
             this.listViewKoszty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.listViewKoszty.Name = "listViewKoszty";
-            this.listViewKoszty.Size = new System.Drawing.Size(1855, 972);
+            this.listViewKoszty.Size = new System.Drawing.Size(1727, 979);
             this.listViewKoszty.TabIndex = 0;
             this.listViewKoszty.UseCompatibleStateImageBehavior = false;
             this.listViewKoszty.View = System.Windows.Forms.View.Details;
-            this.listViewKoszty.Dock = System.Windows.Forms.DockStyle.Fill; // Docking to fill the parent container
             // 
             // columnHeader1
             // 
@@ -117,7 +115,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabPage2.Size = new System.Drawing.Size(1887, 993);
+            this.tabPage2.Size = new System.Drawing.Size(1743, 993);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Przychody";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -129,15 +127,15 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
+            this.listViewPrzychody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPrzychody.HideSelection = false;
-            this.listViewPrzychody.Location = new System.Drawing.Point(16, 14);
+            this.listViewPrzychody.Location = new System.Drawing.Point(8, 7);
             this.listViewPrzychody.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.listViewPrzychody.Name = "listViewPrzychody";
-            this.listViewPrzychody.Size = new System.Drawing.Size(1855, 972);
+            this.listViewPrzychody.Size = new System.Drawing.Size(1727, 979);
             this.listViewPrzychody.TabIndex = 0;
             this.listViewPrzychody.UseCompatibleStateImageBehavior = false;
             this.listViewPrzychody.View = System.Windows.Forms.View.Details;
-            this.listViewPrzychody.Dock = System.Windows.Forms.DockStyle.Fill; // Docking to fill the parent container
             // 
             // columnHeader5
             // 
@@ -170,15 +168,16 @@
             this.back.Text = "Powrót";
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
-            this.back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left))); // Anchoring to top-left
             // 
             // Finanse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2057, 1281);
             this.Controls.Add(this.back);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Finanse";
             this.Text = "Finanse";

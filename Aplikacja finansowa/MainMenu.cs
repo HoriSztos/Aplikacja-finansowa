@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Npgsql;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Collections.Generic;
+
 
 namespace Aplikacja_finansowa
 {
@@ -12,7 +11,10 @@ namespace Aplikacja_finansowa
         {
             InitializeComponent();
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            StyleManager.ApplyStylesToForm(this);
         }
+
+        
 
         private void zarzadzaj_Click(object sender, EventArgs e)
         {
@@ -70,6 +72,57 @@ namespace Aplikacja_finansowa
                             }
                         }
                     }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+            PobierzSumy();
+        }
+
+        private void PobierzSumy()
+        {
+            try
+            {
+                // Połączenie z bazą danych
+                string connectionString = "Host=localhost;Username=postgres;Password=projekt;Database=postgres";
+                using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Zapytanie SQL dla sumy wydatków od początku miesiąca
+                    string queryWydatki = "SELECT SUM(value) FROM projekt.transactions WHERE category IN (SELECT * FROM projekt.categories_expenses) and \"date\" >= DATE_TRUNC('month', CURRENT_DATE) AND \"date\" <= CURRENT_DATE ";
+
+                    // Zapytanie SQL dla sumy przychodów od początku miesiąca
+                    string queryPrzychody = "SELECT SUM(value) FROM projekt.transactions WHERE category IN (SELECT * FROM projekt.categories_gains) and \"date\" >= DATE_TRUNC('month', CURRENT_DATE) AND \"date\" <= CURRENT_DATE ";
+
+                    // Wykonanie zapytań i odczytanie wyników
+                    decimal sumWydatki = 0;
+                    decimal sumPrzychody = 0;
+
+                    using (NpgsqlCommand commandWydatki = new NpgsqlCommand(queryWydatki, connection))
+                    {
+                        object result = commandWydatki.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            sumWydatki = Convert.ToDecimal(result);
+                        }
+                       
+                    }
+
+                    using (NpgsqlCommand commandPrzychody = new NpgsqlCommand(queryPrzychody, connection))
+                    {
+                        object result = commandPrzychody.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            sumPrzychody = Convert.ToDecimal(result);
+                        }
+                    }
+
+                    DateTime dzisiaj = DateTime.Now;
+                    podsumowanie.Text = $"Dziś jest {dzisiaj:dd.MM.yyyy}. \nPodsumowanie transakcji od początku miesiąca: \nWydatki: {sumWydatki:C}\nPrzychody: {sumPrzychody:C}";
                 }
             }
             catch (Exception ex)

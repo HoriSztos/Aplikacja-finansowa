@@ -2,7 +2,6 @@
 using OfficeOpenXml;
 using System;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -18,7 +17,9 @@ namespace Aplikacja_finansowa
             InitializeComponent();
             monthCalendar1.DateSelected += new DateRangeEventHandler(MonthCalendar_DateSelected);
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Ustawienie kontekstu licencyjnego
+            StyleManager.ApplyStylesToForm(this);
         }
+
 
         private void MonthCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
