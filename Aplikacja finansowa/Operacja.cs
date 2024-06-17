@@ -18,7 +18,7 @@ namespace Aplikacja_finansowa
         }
 
 
-        private void Operacja_Load(object sender, EventArgs e)
+        public void Operacja_Load(object sender, EventArgs e)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace Aplikacja_finansowa
             }
         }
 
-            private void dodaj_Click(object sender, EventArgs e)
+            public void dodaj_Click(object sender, EventArgs e)
         {
             string name =tytuł.Text.ToString();
             string description =opis.Text.ToString();
@@ -74,7 +74,7 @@ namespace Aplikacja_finansowa
             InsertTransaction(category, name, description, value);
         }
 
-        private void kategorie_Click(object sender, EventArgs e)
+        public void kategorie_Click(object sender, EventArgs e)
         {
             Kategorie kategorie = new Kategorie();
             this.Hide();
@@ -82,7 +82,7 @@ namespace Aplikacja_finansowa
             kategorie.Show();
         }
 
-        private void back_Click(object sender, EventArgs e)
+        public void back_Click(object sender, EventArgs e)
         {
             MainMenu mainMenu = new MainMenu();
             this.Hide();
@@ -90,7 +90,7 @@ namespace Aplikacja_finansowa
             mainMenu.Show();
         }
 
-        private void typ_SelectedIndexChanged(object sender, EventArgs e)
+        public void typ_SelectedIndexChanged(object sender, EventArgs e)
         {
             kategoria.Items.Clear();
 
@@ -135,6 +135,14 @@ namespace Aplikacja_finansowa
             {
                 MessageBox.Show($"Wystąpił błąd: {ex.Message}");
             }
+        }
+        public List<string> GetPrzychodyKategorie()
+        {
+            return przychodyKategorie;
+        }
+        public List <string> GetWydatkiKategorie()
+        {
+            return wydatkiKategorie;
         }
     }
 }

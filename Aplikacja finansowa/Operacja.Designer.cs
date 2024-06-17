@@ -160,13 +160,13 @@ namespace Aplikacja_finansowa
 
         #endregion
 
-        private System.Windows.Forms.Button back;
-        private System.Windows.Forms.TextBox tytuł;
-        private System.Windows.Forms.ComboBox kategoria;
-        private System.Windows.Forms.ComboBox typ;
-        private System.Windows.Forms.Button dodaj;
-        private System.Windows.Forms.TextBox opis;
-        private System.Windows.Forms.Button kategorie;
-        private System.Windows.Forms.TextBox kwota;
+        public System.Windows.Forms.Button back;
+        public System.Windows.Forms.TextBox tytuł;
+        public System.Windows.Forms.ComboBox kategoria;
+        public System.Windows.Forms.ComboBox typ;
+        public System.Windows.Forms.Button dodaj;
+        public System.Windows.Forms.TextBox opis;
+        public System.Windows.Forms.Button kategorie;
+        public System.Windows.Forms.TextBox kwota;
     }
 }

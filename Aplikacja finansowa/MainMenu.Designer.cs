@@ -38,9 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.podsumowanie = new System.Windows.Forms.Label();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             //
             // groupBox1
@@ -124,10 +122,7 @@
             this.podsumowanie.Size = new System.Drawing.Size(79, 13);
             this.podsumowanie.TabIndex = 8;
             this.podsumowanie.Text = "Podsumowanie";
-            //
-            // metroStyleManager1
-            //
-            this.metroStyleManager1.Owner = null;
+           
             //
             // MainMenu
             //
@@ -146,7 +141,6 @@
             this.Padding = new System.Windows.Forms.Padding(8, 24, 8, 8);
             this.Text = "Menu";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,6 +157,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label podsumowanie;
-        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }
